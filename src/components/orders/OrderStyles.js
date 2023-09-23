@@ -70,6 +70,7 @@ export const OrderCardUI = styled.div`
         border-radius: 15px;
         padding: 15px;
         gap: 10px;
+        cursor: pointer;
         & img {
                 max-width: 100px;
                 height: 80px;

@@ -1,12 +1,17 @@
 import React from 'react'
 import { OrderCardUI, OrderCardNumber, OrderCardTotal, OrderCardDate } from './OrderStyles'
+import { formatPrice } from '../../utils/formatPrice'
+import { formatDate } from '../../utils/formatDate'
+import { useNavigate } from 'react-router-dom'
 
-const OrderCard = () => {
+const OrderCard = (order) => {
+const navigate = useNavigate();
+
         return (
-                <OrderCardUI>
-                        <OrderCardNumber>Órden #123456789</OrderCardNumber>
-                        <OrderCardDate>05/09/23 - 00:17 hs</OrderCardDate>
-                        <OrderCardTotal>$190194</OrderCardTotal>
+                <OrderCardUI onClick={() => navigate(`/receipt/${order._id}`)}>
+                        <OrderCardNumber>Órden #{order._id}</OrderCardNumber>
+                        <OrderCardDate>Realizada el {formatDate(order.createdAt)}</OrderCardDate>
+                        <OrderCardTotal>{formatPrice(order.total)}</OrderCardTotal>
                 </OrderCardUI>
         )
 }

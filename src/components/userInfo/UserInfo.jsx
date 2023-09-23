@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserInfoUI } from './UserInfoStyles'
+import { UserInfoUI } from './UserStyles'
 
 const UserInfo = () => {
   return (

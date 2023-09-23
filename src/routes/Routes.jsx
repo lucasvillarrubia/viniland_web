@@ -8,6 +8,7 @@ import Receipt from '../pages/receipt/Receipt';
 import NotFound from '../pages/notFound/NotFound';
 import Success from '../pages/success/Success';
 import Home from '../pages/home/Home';
+import ProtectedRoute from '../components/globalComponents/ProtectedRoute/ProtectedRoute';
 
 
 // return (
@@ -21,9 +22,11 @@ function Routes () {
                         <Route path='/' element={<Home />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/signup' element={<Signup />} />
-                        <Route path='/checkout' element={<Checkout />} />
+                        <Route element={<ProtectedRoute redirPath={'/login'} />}>
+                                <Route path='/checkout' element={<Checkout />} />
+                        </Route>
                         <Route path='/my-orders' element={<MyOrders />} />
-                        <Route path='/receipt/:orderId' element={<Receipt />} />
+                        <Route path='/receipt/:oId' element={<Receipt />} />
                         <Route path='/congratulations' element={<Success />} />
                         <Route path='*' element={<NotFound />} />
                 </AllRoutes>

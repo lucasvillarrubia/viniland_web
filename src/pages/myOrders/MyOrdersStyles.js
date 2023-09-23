@@ -30,3 +30,17 @@ export const MyOrdersTitle = styled.h2`
                 /* margin-bottom: 50px; */
         }
 `;
+
+export const MyOrdersButton = styled.button`
+        border: 2px solid black;
+        padding: 1rem 3rem;
+        border-radius: 30px;
+        font-size: 15px;
+        font-family: 'Shrikhand', sans-serif;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        text-align: center;
+        background: var(--amarillo);
+        color: black;
+        cursor: pointer;
+`;

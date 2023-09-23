@@ -55,5 +55,6 @@ export const LoginButton = styled.button`
         text-align: center;
         background: var(--amarillo);
         color: black;
+        cursor: pointer;
 `;
 

@@ -1,20 +1,20 @@
 import React from 'react'
 import { ErrorMessage, Field } from 'formik';
-import { ShippingLabel, ShippingInputStyled, ErrorMessageUI } from './ShippingFormStyles';
+import { LoginLabel, LoginInputStyled, ErrorMessageUI } from './LoginFormStyles';
 
-const ShippingInput = ({ children, htmlFor, type, id, placeholder, name }) => {
+const LoginInput = ({ children, htmlFor, type, id, placeholder, name }) => {
         return (
                 <Field name={name}>
                         {({ field, form: { errors, touched } }) => (
                                 <div>
-                                        <ShippingLabel htmlFor={htmlFor}>{children}</ShippingLabel>
-                                        <ShippingInputStyled
+                                        <LoginLabel htmlFor={htmlFor}>{children}</LoginLabel>
+                                        <LoginInputStyled
                                                 type={type}
                                                 id={id}
                                                 placeholder={placeholder}
                                                 {...field}
                                                 erroneous={errors[field.name] && touched[field.name]}
-                                        ></ShippingInputStyled>
+                                        ></LoginInputStyled>
                                         <ErrorMessage name={field.name}>
                                                 {message => <ErrorMessageUI>{message}</ErrorMessageUI>}
                                         </ErrorMessage>
@@ -24,4 +24,4 @@ const ShippingInput = ({ children, htmlFor, type, id, placeholder, name }) => {
         )
 }
 
-export default ShippingInput
+export default LoginInput

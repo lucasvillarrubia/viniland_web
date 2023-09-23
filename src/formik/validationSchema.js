@@ -1,8 +1,20 @@
 import * as Yup from 'yup'
+import { REG_EMAIL } from '../utils/constants';
 
 export const checkoutValidationSchema = Yup.object({
-        name: Yup.string().required('Campo requerido'),
-        phone: Yup.string().required('Campo requerido'),
-        location: Yup.string().required('Campo requerido'),
-        address: Yup.string().required('Campo requerido')
+        name: Yup.string().required('Campo obligatorio'),
+        phone: Yup.string().required('Campo obligatorio'),
+        location: Yup.string().required('Campo obligatorio'),
+        address: Yup.string().required('Campo obligatorio')
+});
+
+export const signupValidationSchema = Yup.object({
+        name: Yup.string().required('Campo obligatorio'),
+        email: Yup.string().matches(REG_EMAIL, 'Correo inválido').required('Campo obligatorio'),
+        password: Yup.string().min(8, 'La contraseña debe tener por lo menos 8 caracteres').required('Campo obligatorio')
+});
+
+export const loginValidationSchema = Yup.object({
+        email: Yup.string().matches(REG_EMAIL, 'Correo inválido').required('Campo obligatorio'),
+        password: Yup.string().min(8, 'La contraseña debe tener por lo menos 8 caracteres').required('Campo obligatorio')
 });

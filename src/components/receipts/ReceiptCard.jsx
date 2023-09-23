@@ -1,14 +1,15 @@
 import React from 'react'
 import { ReceiptCardUI, ReceiptCardData, ReceiptCardName, ReceiptCardPrice, ReceiptCardSpan } from './ReceiptExtrasStyles'
+import { formatPrice } from '../../utils/formatPrice'
 
-const ReceiptCard = () => {
+const ReceiptCard = (product) => {
   return (
         <ReceiptCardUI>
-                <img src="./images/lasttimethatisawyou.png" alt="imagen-prod-1" />
+                <img src={product.image} alt={product.name} />
                 <ReceiptCardData>
-                        <ReceiptCardName>Last Time That I Saw You</ReceiptCardName>
-                        <ReceiptCardPrice>$100000000</ReceiptCardPrice>
-                        <ReceiptCardSpan>123456789 unidades</ReceiptCardSpan>
+                        <ReceiptCardName>{product.name}</ReceiptCardName>
+                        <ReceiptCardPrice>{formatPrice(product.price)}</ReceiptCardPrice>
+                        <ReceiptCardSpan>{product.xAdded} unidades</ReceiptCardSpan>
                 </ReceiptCardData>
         </ReceiptCardUI>
   )

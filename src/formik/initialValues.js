@@ -5,3 +5,14 @@ export const checkoutInitialValues = {
         location: '',
         address: ''
 }
+
+export const signupInitialValues = {
+        name: '',
+        email: '',
+        password: ''
+}
+
+export const loginInitialValues = {
+        email: '',
+        password: ''
+}
