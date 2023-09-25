@@ -11,6 +11,16 @@ export const createUser = async (name, email, password) => {
         }
 }
 
+export const verifyUser = async (email, code) => {
+        try {
+                const { data } = await axios.patch(`${BASE_URL}/auth/verify`, { email, code });
+                return data;
+        } catch (error) {
+                console.log({ verifyUserError: error });
+                return alert(error.response.data.errors[0].msg);
+        }
+}
+
 export const loginUser = async (email, password) => {
         try {
                 const { data } = await axios.post(`${BASE_URL}/auth/login`, { email, password });

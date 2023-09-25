@@ -17,7 +17,7 @@ const SignupForm = () => {
                                 async (values, actions) => {
                                         const newUser = await createUser(values.name, values.email, values.password);
                                         if(newUser) {
-                                                navigate('/login');
+                                                navigate('/verify');
                                         }
                                         actions.resetForm();
                                 }

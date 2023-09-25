@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ShippingInfo from '../../components/shippingInfo/ShippingInfo'
+// import ShippingInfo from '../../components/shippingInfo/ShippingInfo'
 import ReceiptList from '../../components/receipts/ReceiptList'
 import { ReceiptUI, ReceiptTitle, ReceiptSubtitle, ReceiptButton } from './ReceiptStyles'
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,8 +28,8 @@ const Receipt = () => {
 				? <ReceiptSubtitle>Creada el {formatDate(currentOrder.createdAt)}</ReceiptSubtitle>
 				: (<p>...</p>)
 			}
-			<ReceiptSubtitle>Datos de envío:</ReceiptSubtitle>
-			<ShippingInfo />
+			{/* <ReceiptSubtitle>Datos de envío:</ReceiptSubtitle> */}
+			{/* <ShippingInfo /> */}
 			<ReceiptSubtitle>Productos:</ReceiptSubtitle>
 			{
 				currentOrder ? (<ReceiptList {...currentOrder} />) : (<p>...</p>)

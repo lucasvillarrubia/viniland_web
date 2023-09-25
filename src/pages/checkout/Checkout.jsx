@@ -1,5 +1,5 @@
 import React from 'react'
-import UserInfo from '../../components/userInfo/UserInfo'
+// import UserInfo from '../../components/userInfo/UserInfo'
 import ShippingForm from '../../components/shippingForm/ShippingForm'
 import { CheckoutBG, CheckoutContainer, CheckoutTitle, CheckoutSubtitle, CheckoutInfo } from './CheckoutStyles'
 import Purchase from '../../components/purchase/Purchase'
@@ -15,10 +15,10 @@ const Checkout = () => {
                         <CheckoutContainer>
                                 <Purchase cartItems={cartItems} shippingCost={shippingCost} />
                                 <CheckoutInfo>
-                                        <CheckoutSubtitle>Revisá tu información personal</CheckoutSubtitle>
-                                        <UserInfo />
+                                        {/* <CheckoutSubtitle>Revisá tu información personal</CheckoutSubtitle> */}
+                                        {/* <UserInfo /> */}
                                         <CheckoutSubtitle>Completá la información de envío</CheckoutSubtitle>
-                                        <ShippingForm cartItems={cartItems} />
+                                        <ShippingForm />
                                 </CheckoutInfo>
                         </CheckoutContainer>
                 </CheckoutBG>

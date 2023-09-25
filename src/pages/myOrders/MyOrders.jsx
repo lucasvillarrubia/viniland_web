@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import UserInfo from '../../components/userInfo/UserInfo'
+// import UserInfo from '../../components/userInfo/UserInfo'
 import Orders from '../../components/orders/Orders'
 import { MyOrdersUI, MyOrdersTitle, MyOrdersButton } from './MyOrdersStyles'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,7 +21,7 @@ const MyOrders = () => {
 	return (
 		<MyOrdersUI>
 			<MyOrdersTitle>Mis órdenes</MyOrdersTitle>
-			<UserInfo />
+			{/* <UserInfo /> */}
 			<Orders />
 			<MyOrdersButton onClick={() => navigate('/')}>Volver a inicio</MyOrdersButton>
 		</MyOrdersUI>
