@@ -14,7 +14,10 @@ const MyOrders = () => {
 	const { orders, error } = useSelector(state => state.orders);
 	useEffect(() => {
 		if (!orders) { getOrders(dispatch, currentUser) }
-		if (!currentUser?.token) { dispatch(fetchOrdersFailure()) }
+		if (!currentUser?.token) {
+			dispatch(fetchOrdersFailure());
+			navigate('/login');
+		}
 		else { error && dispatch(clearError()) }
 	}, [dispatch, error, orders, currentUser?.token]);
 

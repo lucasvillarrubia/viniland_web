@@ -26,6 +26,7 @@ const UserMenu = () => {
                                         <p onClick={() => {
                                                         dispatch(setCurrentUser(null));
                                                         dispatch(toggleUserMenuDisplay());
+                                                        navigate('/');
                                                 }}
                                         >
                                                 Cerrar sesión

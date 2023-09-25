@@ -4,14 +4,13 @@ import { verifyValidationSchema } from '../../formik/validationSchema'
 import { verifyInitialValues } from '../../formik/initialValues'
 import VerifyInput from './VerifyInput'
 import { useNavigate } from 'react-router-dom'
-import { loginUser, verifyUser } from '../../features/users/usersAPI'
-import { useDispatch, useSelector } from 'react-redux'
+import { verifyUser } from '../../features/users/usersAPI'
+import { useDispatch } from 'react-redux'
 import { setCurrentUser } from '../../features/users/usersSlice'
 
 const VerifyForm = () => {
         const navigate = useNavigate();
         const dispatch = useDispatch();
-        const { currentUser } = useSelector(state => state.users);
         return (
                 <Formik
                         initialValues={verifyInitialValues}

@@ -5,7 +5,7 @@ import { checkoutValidationSchema } from '../../formik/validationSchema'
 import ShippingInput from './ShippingInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { createOrder } from '../../features/orders/ordersAPI'
+import { createOrder, getOrders } from '../../features/orders/ordersAPI'
 import { cleanCart } from '../../features/cart/cartSlice'
 
 const ShippingForm = () => {
@@ -13,6 +13,7 @@ const ShippingForm = () => {
         const navigate = useNavigate();
         const { cartItems, shippingCost } = useSelector(state => state.cart);
         const { currentUser } = useSelector(state => state.users);
+        const { orders } = useSelector(state => state.orders);
         const orderItems = cartItems.map(product => {
                 const { name, id, price, xAdded, author } = product;
                 return ({ name, id, price, xAdded, author });
@@ -20,7 +21,6 @@ const ShippingForm = () => {
         const cartTotalCost = cartItems
                 .map(product => product.xAdded * product.price)
                 .reduce((acc, qty) => acc += qty, 0);
-        console.log(orderItems);
         const orderPrice = cartTotalCost + shippingCost;
         return (
                 <Formik 
@@ -28,7 +28,6 @@ const ShippingForm = () => {
                         validationSchema={checkoutValidationSchema}
                         onSubmit={
                                 async values => {
-                                        console.log(currentUser);
                                         if (!currentUser.verified) {
                                                 navigate('/verify');
                                                 return;
@@ -40,10 +39,10 @@ const ShippingForm = () => {
                                                 total: orderPrice,
                                                 shippingDetails: { ...values }
                                         }
-                                        console.log(orderData);
                                         try {
                                                 await createOrder(dispatch, currentUser, orderData);
                                                 dispatch(cleanCart());
+                                                await getOrders(dispatch, currentUser);
                                                 navigate('/congratulations');
                                         } catch (error) {
                                                 alert('No se pudo crear la orden');

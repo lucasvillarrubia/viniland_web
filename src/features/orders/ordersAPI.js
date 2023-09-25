@@ -19,7 +19,7 @@ export const createOrder = async (dispatch, currentUser, order) => {
         try {
                 const res = await axios.post(`${BASE_URL}/orders`, order, { headers: { 'x-token': currentUser.token } });
                 if (res) {
-                        dispatch(getOrders(dispatch, currentUser));
+                        return alert(`La orden ${res.data.order._id.slice(5, 15)} fue realizada con éxito.`);
                 }
         } catch (error) {
                 console.error({ error });

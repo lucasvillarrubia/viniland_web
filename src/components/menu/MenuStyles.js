@@ -28,7 +28,7 @@ export const MenuUI = styled.ul`
         gap: 10px;
         margin-top: 20px;
         text-align: right;
-        & li {
+        & a {
                 font-size: 30px;
                 font-family: 'Kanit', sans-serif;
                 color: white;
@@ -38,7 +38,25 @@ export const MenuUI = styled.ul`
                         padding-right: 20px;
                 }
         }
-        & li:hover {
+        /* & li {
+                font-size: 30px;
+                font-family: 'Kanit', sans-serif;
+                color: white;
+                padding-right: 50px;
+                @media screen and (max-width: 768px) {
+                        width: 100%;
+                        padding-right: 20px;
+                }
+        } */
+        & a:hover {
+                text-decoration: underline;
+                @media screen and (max-width: 768px) {
+                        background-color: white;
+                        color: black;
+                        text-decoration: none;
+                }
+        }
+        /* & li:hover {
                 text-decoration: underline;
                 @media screen and (max-width: 768px) {
                         background-color: white;
@@ -46,10 +64,7 @@ export const MenuUI = styled.ul`
                                 color: black;
                         }
                 }
-        }
-        & a {
-                color: white;
-        }
+        } */
         @media screen and (max-width: 768px) {
                 background-color: rgba(0, 0, 0, 0.7);
         }
