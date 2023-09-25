@@ -52,6 +52,7 @@ export const UserMenuUI = styled.div`
                 font-size: 25px;
                 /* width: 100%; */
                 text-align: left;
+                cursor: pointer;
         }
         & h6 {
                 color: white;

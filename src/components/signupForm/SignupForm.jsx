@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Form, Formik, SignupSubmit } from './SignupFormStyles'
 import { signupInitialValues } from '../../formik/initialValues'
 import { signupValidationSchema } from '../../formik/validationSchema'
 import SignupInput from './SignupInput'
 import { createUser } from '../../features/users/usersAPI'
-import { useDispatch, useSelector } from 'react-redux'
-import { setCurrentUser } from '../../features/users/usersSlice'
 import { useNavigate } from 'react-router-dom'
 
 const SignupForm = () => {
         const navigate = useNavigate();
-        const dispatch = useDispatch();
-        const { currentUser } = useSelector(state => state.users);
-        useEffect(() => { if (currentUser) { navigate('./') } }, [navigate, currentUser]);
         
         return (
                 <Formik 
@@ -20,9 +15,11 @@ const SignupForm = () => {
                         validationSchema={signupValidationSchema} 
                         onSubmit={
                                 async (values, actions) => {
-                                        const user = await createUser(values.name, values.email, values.password);
+                                        const newUser = await createUser(values.name, values.email, values.password);
+                                        if(newUser) {
+                                                navigate('/login');
+                                        }
                                         actions.resetForm();
-                                        if (user) { dispatch(setCurrentUser({ ...user.user, token: user.token })) }
                                 }
                         }
                 >

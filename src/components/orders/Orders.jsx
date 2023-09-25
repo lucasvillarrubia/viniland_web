@@ -14,8 +14,10 @@ const Orders = () => {
 	return (
 		<OrderCardsContainer>
 			{
-				orders?.length
-					? (orders.map(order => <OrderCard key={order._id} {...order} />))
+				orders
+					? (Object.entries(orders).map(([ orderId, order ]) => {
+						return (<OrderCard key={orderId} {...order} />)
+					}))
 					: (<h6>No hiciste ningún pedido todavía</h6>)
 			}
 		</OrderCardsContainer>

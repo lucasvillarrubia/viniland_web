@@ -4,6 +4,7 @@ import { HiOutlineHome, HiOutlineMenu, HiOutlineSearch, HiOutlineUser } from 're
 import CartIcon from '../cart/CartIcon';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { toggleUserMenuDisplay } from '../../features/users/usersSlice';
 
 
 const Toolbar = ({ menuDisplay, setMenuDisplay }) => {

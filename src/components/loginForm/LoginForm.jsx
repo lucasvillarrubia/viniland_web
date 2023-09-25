@@ -12,14 +12,14 @@ const LoginForm = () => {
         const dispatch = useDispatch();
         const navigate = useNavigate();
         const { currentUser } = useSelector(state => state.users);
-        useEffect(() => { if (currentUser) { navigate('./') } }, [navigate, currentUser]);
+        useEffect(() => { if (currentUser) { navigate('/') } }, [navigate, currentUser, dispatch]);
 
         return (
                 <Formik
                         initialValues={loginInitialValues}
                         validationSchema={loginValidationSchema}
-                        onSubmit={values => {
-                                        const user = loginUser(values.email, values.password);
+                        onSubmit={async (values) => {
+                                        const user = await loginUser(values.email, values.password);
                                         if (user) { dispatch(setCurrentUser({ ...user.user, token: user.token })) }
                                 }
                         }

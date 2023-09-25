@@ -5,7 +5,6 @@ import { formatPrice } from '../../utils/formatPrice'
 const ReceiptCard = (product) => {
   return (
         <ReceiptCardUI>
-                <img src={product.image} alt={product.name} />
                 <ReceiptCardData>
                         <ReceiptCardName>{product.name}</ReceiptCardName>
                         <ReceiptCardPrice>{formatPrice(product.price)}</ReceiptCardPrice>

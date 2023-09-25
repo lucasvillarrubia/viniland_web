@@ -48,3 +48,17 @@ export const ReceiptSubtitle = styled.h3`
                 max-width: 100%;
         }
 `;
+
+export const ReceiptButton = styled.button`
+        border: 2px solid black;
+        padding: 1rem 3rem;
+        border-radius: 30px;
+        font-size: 15px;
+        font-family: 'Shrikhand', sans-serif;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        text-align: center;
+        background: var(--amarillo);
+        color: black;
+        cursor: pointer;
+`;

@@ -5,7 +5,7 @@ import { formatDate } from '../../utils/formatDate'
 import { useNavigate } from 'react-router-dom'
 
 const OrderCard = (order) => {
-const navigate = useNavigate();
+        const navigate = useNavigate();
 
         return (
                 <OrderCardUI onClick={() => navigate(`/receipt/${order._id}`)}>

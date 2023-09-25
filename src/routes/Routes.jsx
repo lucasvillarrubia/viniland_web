@@ -11,12 +11,7 @@ import Home from '../pages/home/Home';
 import ProtectedRoute from '../components/globalComponents/ProtectedRoute/ProtectedRoute';
 
 
-// return (
-//         <div>Routes</div>
-//   )
-
 function Routes () {
-// const Routes = () => {
         return (
                 <AllRoutes>
                         <Route path='/' element={<Home />} />

@@ -3,7 +3,7 @@ import { BASE_URL } from "../../utils/constants"
 
 export const createUser = async (name, email, password) => {
         try {
-                const { data } = await axios.post(`${BASE_URL}/auth/register`, { name, email, password });
+                const { data } = await axios.post(`${BASE_URL}/auth/signup`, { name, email, password });
                 return data;
         } catch (error) {
                 console.log({ createUserError: error });
