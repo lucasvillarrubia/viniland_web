@@ -35,6 +35,5 @@ function Routes () {
                 </AllRoutes>
         )
 }
-        // }
 
 export default Routes
