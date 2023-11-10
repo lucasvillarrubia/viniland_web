@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 const Orders = () => {
 	const { orders, error, loading } = useSelector(state => state.orders);
 	if (loading && !orders) {
-		return (<p>...</p>);
+		return (<p>Cargando ordenes...</p>);
 	}
 	if (error) {
 		return (<p>{error}</p>);

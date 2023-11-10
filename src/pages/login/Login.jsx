@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
         const navigate = useNavigate();
-
         return (
                 <LoginBG>
                         <LoginTitle>INICIAR SESIÓN</LoginTitle>

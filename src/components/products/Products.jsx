@@ -8,10 +8,12 @@ import { INITIAL_LIMIT } from "../../utils/constants"
 const Products = () => {
   let renderCount = 0;
   let products = useSelector(state => state.products.products);
+  console.log(products);
   const selectedCat = useSelector(state => state.categories.selectedCategory);
   const [limit, setLimit] = useState(INITIAL_LIMIT);
   if (selectedCat && products[selectedCat]) {
     products = { [selectedCat]: products[selectedCat] };
+    console.log(products);
   }
   useEffect(() => {
       setLimit(INITIAL_LIMIT);

@@ -17,6 +17,7 @@ const SignupForm = () => {
                                 async (values, actions) => {
                                         const newUser = await createUser(values.name, values.email, values.password);
                                         if(newUser) {
+                                                alert("Te registraste correctamente. Ahora podés verificar tu cuenta.");
                                                 navigate('/verify');
                                         }
                                         actions.resetForm();

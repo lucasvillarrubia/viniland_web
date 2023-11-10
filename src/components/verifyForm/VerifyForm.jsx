@@ -18,8 +18,8 @@ const VerifyForm = () => {
                         onSubmit={async (values) => {
                                         const result = await verifyUser(values.email, values.code);
                                         if (result) {
-                                                alert(result.msg);
                                                 dispatch(setCurrentUser(null));
+                                                alert("¡Verificaste tu cuenta exitosamente! Podés iniciar sesión nuevamente.");
                                                 navigate('/login');
                                         }
                                 }

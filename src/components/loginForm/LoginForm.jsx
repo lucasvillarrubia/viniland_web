@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../../features/users/usersAPI'
 import { setCurrentUser } from '../../features/users/usersSlice'
+import LoadingButton from '../../components/globalComponents/LoadingButton/LoadingButton'
+
 
 const LoginForm = () => {
         const dispatch = useDispatch();
@@ -20,7 +22,10 @@ const LoginForm = () => {
                         validationSchema={loginValidationSchema}
                         onSubmit={async (values) => {
                                         const user = await loginUser(values.email, values.password);
-                                        if (user) { dispatch(setCurrentUser({ ...user.user, token: user.token })) }
+                                        if (user) {
+                                                dispatch(setCurrentUser({ ...user.user, token: user.token }));
+                                                alert("¡Bienvenidx " + user.user.name + "!");
+                                        }
                                 }
                         }
                 >
@@ -35,6 +40,9 @@ const LoginForm = () => {
                                         <a href="#">¿Te olvidaste tu contraseña?</a>
                                 </div> */}
                                 <LoginSubmit type='submit'>Iniciar sesión</LoginSubmit>
+                                {/* <LoadingButton type='submit' isLoading={false}> */}
+                                        {/* Click me */}
+                                {/* </LoadingButton> */}
                         </Form>
                 </Formik>
         )

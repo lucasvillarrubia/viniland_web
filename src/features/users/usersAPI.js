@@ -7,7 +7,7 @@ export const createUser = async (name, email, password) => {
                 return data;
         } catch (error) {
                 console.log({ createUserError: error });
-                return alert(error.response.data.errors[0].msg);
+                return alert(error.response.data.msg);
         }
 }
 
@@ -17,7 +17,7 @@ export const verifyUser = async (email, code) => {
                 return data;
         } catch (error) {
                 console.log({ verifyUserError: error });
-                return alert(error.response.data.errors[0].msg);
+                return alert(error.response.data.msg);
         }
 }
 
@@ -27,6 +27,6 @@ export const loginUser = async (email, password) => {
                 return data;
         } catch (error) {
                 console.log({ loginUserError: error });
-                return alert(error.response.data.errors[0].msg);
+                return alert(error.response.data.msg);
         }
 }
