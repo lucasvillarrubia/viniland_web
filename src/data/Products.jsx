@@ -42,16 +42,19 @@ export const ProductCollection = [
         new product (25, "Rumours", "Fleetwood Mac", "./images/rumours.jpeg", 6700, "rock", 0, 0, false),
         new product (26, "The Slow Rush", "Tame Impala", "./images/theslowrush.jpg", 5000, "rock", 0, 0, false),
         new product (27, "30", "Adele", "./images/30.jpg", 10500, "pop", 0, 0, false),
-        new product (28, "Me", "Elton John", "./images/me-book.png", 6500, "jazz", 0, 0, false),
-        new product (29, "Paracaidas y Vueltas", "Andrés Calamaro", "./images/paracaidasyvueltas-book.png", 3500, "jazz", 0, 0, false),
-        new product (30, "Chronicles Vol. 1", "Bob Dylan", "./images/chroniclesvol1-book.png", 4100, "jazz", 0, 0, false),
-        new product (31, "Born To Run", "Bruce Springsteen", "./images/borntorun-book.png", 3100, "jazz", 0, 0, false)
+        new product (28, "Me", "Elton John", "./images/me-book.png", 6500, "books", 0, 0, false),
+        new product (29, "Paracaidas y Vueltas", "Andrés Calamaro", "./images/paracaidasyvueltas-book.png", 3500, "books", 0, 0, false),
+        new product (30, "Chronicles Vol. 1", "Bob Dylan", "./images/chroniclesvol1-book.png", 4100, "books", 0, 0, false),
+        new product (31, "Born To Run", "Bruce Springsteen", "./images/borntorun-book.png", 3100, "books", 0, 0, false)
 ];
 
 export const ProductsByGenre = ProductCollection.reduce((acc, product) => {
         if(!acc[product.genre]) {
                 acc[product.genre] = [];
         }
+        if(!acc["vinyl"]) { acc["vinyl"] = []; }
+        if(!acc["argento"]) { acc["argento"] = []; }
         acc[product.genre] = [...acc[product.genre], product];
+        if (product.isAVinyl) { acc["vinyl"] = [...acc["vinyl"], product]; }
         return acc;
 }, {});

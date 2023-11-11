@@ -7,13 +7,11 @@ import { INITIAL_LIMIT } from "../../utils/constants"
 
 const Products = () => {
   let renderCount = 0;
-  let products = useSelector(state => state.products.products);
-  console.log(products);
+  let products = useSelector(state => state.products.productsByGenre);
   const selectedCat = useSelector(state => state.categories.selectedCategory);
   const [limit, setLimit] = useState(INITIAL_LIMIT);
   if (selectedCat && products[selectedCat]) {
     products = { [selectedCat]: products[selectedCat] };
-    console.log(products);
   }
   useEffect(() => {
       setLimit(INITIAL_LIMIT);
@@ -37,6 +35,7 @@ const Products = () => {
             })
           ))
         }
+        {renderCount == 0 && <p>Todavía no hay productos de esta categoría</p>}
       </ProductCardsContainer>
       {(renderCount >= INITIAL_LIMIT) && (
         <ButtonContainer>

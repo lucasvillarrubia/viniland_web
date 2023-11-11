@@ -32,8 +32,8 @@ export const CategoryCollection = [
         },
         {
                 id: 6,
-                name: 'Jazz',
-                category: 'jazz',
+                name: 'Books',
+                category: 'books',
         },
         {
                 id: 7,
@@ -53,7 +53,7 @@ export const IconByCat = {
         rock: <TbHandRock />,
         rnb: <SiSoundcharts />,
         rap: <GiBoombox />,
-        jazz: <GiSaxophone />,
+        books: <GiSaxophone />,
         vinyl: <BsVinyl />,
         argento: <GiStarsStack />
       }

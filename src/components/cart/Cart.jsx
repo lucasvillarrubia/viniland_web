@@ -40,7 +40,7 @@ const Cart = () => {
 						</div>
 						<div>
 							<p>Envío:</p>
-							<p>{formatPrice(shippingCost)}</p>
+							<p>{(cartTotalCost < 15000) ? formatPrice(shippingCost) : "GRATIS"}</p>
 						</div>
 					</CartCosts>
 					<CartSpan></CartSpan>
@@ -49,7 +49,7 @@ const Cart = () => {
 					<CartConfirm>
 						<div>
 							<p>Total:</p>
-							<TotalText>{formatPrice(cartTotalCost + shippingCost)}</TotalText>
+							<TotalText>{(cartTotalCost < 15000) ? formatPrice(cartTotalCost + shippingCost) : formatPrice(cartTotalCost)}</TotalText>
 						</div>
 						<CartPurchaseButton
 							disabled={!cartItems.length}
