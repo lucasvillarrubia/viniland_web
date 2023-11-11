@@ -7,7 +7,7 @@ export const createUser = async (name, email, password) => {
                 return data;
         } catch (error) {
                 console.log({ createUserError: error });
-                return alert(error.response.data.msg);
+                return alert(error.response.data.errors[0].msg);
         }
 }
 
