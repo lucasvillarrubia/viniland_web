@@ -6,9 +6,9 @@ const ProtectedRoute = ({ redirPath }) => {
         const { currentUser } = useSelector(state => state.users);
         if (!currentUser) {
                 alert("Tenés que iniciar sesión para realizar esta acción!");
-                return (<Outlet />);
+                return (<Navigate to={redirPath} />);
         }
-        else return (<Navigate to={redirPath} />);
+        else return (<Outlet />);
         // return currentUser ? (<Outlet />) : (<Navigate to={redirPath} />)
 }
 
