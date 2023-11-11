@@ -57,5 +57,3 @@ export const IconByCat = {
         vinyl: <BsVinyl />,
         argento: <GiStarsStack />
       }
-
-// export default CategoryCollection
