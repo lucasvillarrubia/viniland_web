@@ -29,6 +29,7 @@ const ShippingForm = () => {
                         onSubmit={
                                 async values => {
                                         if (!currentUser.verified) {
+                                                alert("Primero tenés que verificar tu cuenta para realizar una orden");
                                                 navigate('/verify');
                                                 return;
                                         }
