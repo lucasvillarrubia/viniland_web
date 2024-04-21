@@ -1,8 +1,7 @@
-# React + Vite
+# Viniland
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto integrador realizado durante mi formación en NUCBA.
+Página web con formato de Single Page Application (SPA) que representa una tienda de vinilos.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Front basado en componentes de React y construido sobre Create-react-app y Vite durante el desarrollo del proyecto.
+- Back constituido por scripts en Javascript cuyas funciones principales realizan la conexión a una API (también desarrollada durante el curso) que permite el registro, manejo de sesiónes activas y compras de un usuario.
