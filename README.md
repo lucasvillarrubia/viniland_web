@@ -1,6 +1,7 @@
 # Viniland
 
 Proyecto integrador realizado durante mi formación en NUCBA.
+
 Página web con formato de Single Page Application (SPA) que representa una tienda de vinilos.
 
 - Front basado en componentes de React y construido sobre Create-react-app y Vite durante el desarrollo del proyecto.
